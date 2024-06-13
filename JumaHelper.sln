@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JumaHelper.Server", "JumaHelper.Server\JumaHelper.Server.csproj", "{EAF2DACD-CEB1-4623-9309-7CC893004008}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "jumahelper.client", "jumahelper.client\jumahelper.client.esproj", "{8C3176E3-FCC4-4E8B-B7B6-2F831E69109D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EAF2DACD-CEB1-4623-9309-7CC893004008}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAF2DACD-CEB1-4623-9309-7CC893004008}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAF2DACD-CEB1-4623-9309-7CC893004008}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAF2DACD-CEB1-4623-9309-7CC893004008}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C3176E3-FCC4-4E8B-B7B6-2F831E69109D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C3176E3-FCC4-4E8B-B7B6-2F831E69109D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C3176E3-FCC4-4E8B-B7B6-2F831E69109D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{8C3176E3-FCC4-4E8B-B7B6-2F831E69109D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C3176E3-FCC4-4E8B-B7B6-2F831E69109D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C3176E3-FCC4-4E8B-B7B6-2F831E69109D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5B7308F7-9405-43A5-8A2E-974E4B5E2924}
+	EndGlobalSection
+EndGlobal

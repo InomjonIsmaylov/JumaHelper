@@ -1,0 +1,224 @@
+{
+  "x-generator": "NSwag v14.0.7.0 (NJsonSchema v11.0.0.0 (Newtonsoft.Json v13.0.0.0))",
+  "openapi": "3.0.0",
+  "info": {
+    "title": "My Title",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/DuaRequest/RequestForDua": {
+      "put": {
+        "tags": [
+          "DuaRequest"
+        ],
+        "operationId": "DuaRequest_RequestForDua",
+        "requestBody": {
+          "x-name": "request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DuaRequestDto"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DuaRequestDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/DuaType/ReturnAll": {
+      "get": {
+        "tags": [
+          "DuaType"
+        ],
+        "operationId": "DuaType_ReturnAll",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DuaRequestTypeDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/DuaType/CreateNewType": {
+      "put": {
+        "tags": [
+          "DuaType"
+        ],
+        "operationId": "DuaType_CreateNewType",
+        "requestBody": {
+          "x-name": "name",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DuaRequestTypeDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "DuaRequestDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "requestType": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/DuaRequestTypeDto"
+              }
+            ]
+          },
+          "owner": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/DuaRequestOwnerDto"
+              }
+            ]
+          },
+          "requestTo": {
+            "$ref": "#/components/schemas/DuaRequestTo"
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 3000,
+            "nullable": true
+          }
+        }
+      },
+      "DuaRequestTypeDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 800
+          },
+          "duaRequests": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DuaRequestDto"
+            }
+          }
+        }
+      },
+      "DuaRequestOwnerDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "fatherName": {
+            "type": "string",
+            "maxLength": 100,
+            "nullable": true
+          },
+          "duaRequests": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DuaRequestDto"
+            }
+          }
+        }
+      },
+      "DuaRequestTo": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 250,
+            "nullable": true
+          },
+          "affiliation": {
+            "$ref": "#/components/schemas/Affiliation"
+          }
+        }
+      },
+      "Affiliation": {
+        "type": "integer",
+        "description": "",
+        "x-enumNames": [
+          "Father",
+          "Mother",
+          "Parents",
+          "Children",
+          "Brother",
+          "Sister",
+          "Siblings",
+          "Relative",
+          "Friend",
+          "Teacher",
+          "Other"
+        ],
+        "enum": [
+          10,
+          20,
+          30,
+          40,
+          50,
+          60,
+          70,
+          80,
+          90,
+          100,
+          500
+        ]
+      }
+    }
+  }
+}
